@@ -46,7 +46,7 @@ Pokemon.prototype.urlNumber = function () {
 
 	var formeLetter = this.data["formeLetter"];
 	if (formeLetter) {
-		urlNumber += formeLetter.toLowerCase();
+		urlNumber += formeLetter;
 	}
 
 	return urlNumber;
@@ -64,7 +64,7 @@ Pokemon.prototype.getIconImageURL = function() {
 
 	var formeLetter = this.data["formeLetter"];
 	if (formeLetter && (number != "493") && (number != "649") && (number != "710") && (number != "711")) { // arceus, genesect don't work right now. Pumpkaboo/Gourgeist shouldn't work ever.
-		imageURL += formeLetter.toLowerCase();
+		imageURL += formeLetter;
 	}
 
 	return imageURL + ".png";
@@ -105,15 +105,16 @@ Pokemon.prototype.generateAutocompleteList = function() {
 	}
 
 	// THIS WILL FAIL WITH ROTOM/PUNCTUATION FIGURE OUT A BETTER WAY TO DO THIS.
-	var pokemon = pokedex.learnsets[this.data["species"].toLowerCase().replace(/\.|\-|\s/g, '')];
+	var pokemon = pokedex.learnsets[this.data["species"].toLowerCase().replace(/\.|\-|\s/g,'')];
 
 	if (!pokemon) {
-		pokemon = pokedex.learnsets[this.data["baseSpecies"].toLowerCase().replace(/\.|\-|\s/g, '')]
+		pokemon = pokedex.learnsets[this.data["baseSpecies"].toLowerCase().replace(/\.|\-|\s/g,'')]
 	}
 
 	var learnset = pokemon["learnset"];
+	
 	this.autocomplete = [];
-	for (move in learnset) {
-		this.autocomplete.push(pokedex.moves[move]["name"]);
+	for (move in Object.keys(learnset)) {
+		this.autocomplete.push(move);
 	}
 }
