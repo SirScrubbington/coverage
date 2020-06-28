@@ -412,15 +412,11 @@ Pokemon.prototype.generateAutocompleteList = function() {
 		return; // only do this once per pokemon
 	}
 
-	console.log(this.data);
-
 	// THIS WILL FAIL WITH ROTOM/PUNCTUATION FIGURE OUT A BETTER WAY TO DO THIS.
-	var pokemon = pokedex.learnsets[this.data["species"].toLowerCase().replace(/[^a-zA-Z0-9]/g, '')];
-
-	string = string
+	var pokemon = pokedex.learnsets[this.data["species"].toLowerCase().replace(/\.|\-|\s/g,'')];
 
 	if (!pokemon) {
-		pokemon = pokedex.learnsets[this.data["baseSpecies"].toLowerCase().replace(/[^a-zA-Z0-9]/g, '')];
+		pokemon = pokedex.learnsets[this.data["baseSpecies"].toLowerCase().replace(/\.|\-|\s/g,'')]
 	}
 
 	var learnset = pokemon["learnset"];

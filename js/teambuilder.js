@@ -384,8 +384,7 @@ $(document).ready(function() {
 	for (var i = 0; i < MAX_POKEMON; ++i) {
 		$( "#pkmn" + (i + 1) +" input" ).on('input', function() {
 			i = parseInt(this.getAttribute("pokemon"), 10);
-    		//if (pokedex.pokemon[this.value.toLowerCase().replace(/\.|\-|\s/g, '')] == undefined && pokemon[i] != undefined) {
-    		if (pokedex.pokemon[this.value.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')] == undefined && pokemon[i] != undefined) {
+    		if (pokedex.pokemon[this.value.toLowerCase().replace(/\.|\-|\s/g, '')] == undefined && pokemon[i] != undefined) {
     			pokemon[i] = undefined;
 
     			// update UI
