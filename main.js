@@ -353,8 +353,11 @@ function loadAttacker(name) {
 	if (attacker.dex != undefined) {
     // load infobox
     // $("#attacker #infobox #number").text(attacker.dex['num']);
-    $("#attacker #infobox #number").html("<img id='attackerImg' src='media/pokemon/icons/" + attacker.dex['num'] + ".png'/>");
-    $("#attacker #infobox #name").text(attacker.dex['species']);
+    
+	// CHECK FOR DIFFERENT FORMES!!
+	$("#attacker #infobox #number").html("<img id='attackerImg' src='media/pokemon/icons/" + attacker.dex['num'] + ".png'/>");
+	
+	$("#attacker #infobox #name").text(attacker.dex['species']);
     $("#attacker #infobox #close").click(function() {
       console.log("Handler for .click() called.");
 
