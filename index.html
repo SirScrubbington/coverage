@@ -24,6 +24,9 @@
 		<script type='text/javascript' src='data/moves.js' defer="defer"></script>
 		<script src="js/teambuilder.js"></script>
 		<script src="data/pokemon.js"></script> <!--move this?-->
+		
+		<!-- Dark Mode! Sourced from https://www.jqueryscript.net/other/dark-mode-bootstrap.html -->
+		<!-- <script type='text/javascript' src='js/dark-mode-switch.min.js' defer="defer"></script> -->
 
 		<!-- testing only -->
 		<script src="utils/generate-autocomplete.js"></script>
@@ -33,8 +36,8 @@
 			<div id="selector-column" class="col-md-3">
 				<!-- Pokemon picker goes here -->
 				<div id="pkmn1" class="input-group col-md-12 pkmnContainer" moreInfo="hidden">
-					<span class='input-group-addon'>
-						<img src='media/pokemon/icons/0.png'/>
+					<span class='input-group-addon pkmnIcon'>
+						<img src='media/pokemon/icons/000.png'/>
 					</span>
 					<input type="text" class="form-control" placeholder="Pokemon #1" style="border-right: 0px" pokemon="0">
 					<span class='input-group-addon validationCell'></span>
@@ -56,8 +59,8 @@
 				</div>
 
 				<div id="pkmn2" class="input-group col-md-12 pkmnContainer" moreInfo="hidden">
-					<span class='input-group-addon'>
-						<img src='media/pokemon/icons/0.png'/>
+					<span class='input-group-addon pkmnIcon'>
+						<img src='media/pokemon/icons/000.png'/>
 					</span>
 					<input type="text" class="form-control" placeholder="Pokemon #2" style="border-right: 0px" pokemon="1">
 					<span class='input-group-addon validationCell'></span>
@@ -79,8 +82,8 @@
 				</div>
 
 				<div id="pkmn3" class="input-group col-md-12 pkmnContainer" moreInfo="hidden">
-					<span class='input-group-addon'>
-						<img src='media/pokemon/icons/0.png'/>
+					<span class='input-group-addon pkmnIcon'>
+						<img src='media/pokemon/icons/000.png'/>
 					</span>
 					<input type="text" class="form-control" placeholder="Pokemon #3" style="border-right: 0px" pokemon="2">
 					<span class='input-group-addon validationCell'></span>
@@ -102,8 +105,8 @@
 				</div>
 
 				<div id="pkmn4" class="input-group col-md-12 pkmnContainer" moreInfo="hidden">
-					<span class='input-group-addon'>
-						<img src='media/pokemon/icons/0.png'/>
+					<span class='input-group-addon pkmnIcon'>
+						<img src='media/pokemon/icons/000.png'/>
 					</span>
 					<input type="text" class="form-control" placeholder="Pokemon #4" style="border-right: 0px" pokemon="3">
 					<span class='input-group-addon validationCell'></span>
@@ -125,8 +128,8 @@
 				</div>
 
 				<div id="pkmn5" class="input-group col-md-12 pkmnContainer" moreInfo="hidden">
-					<span class='input-group-addon'>
-						<img src='media/pokemon/icons/0.png'/>
+					<span class='input-group-addon pkmnIcon'>
+						<img src='media/pokemon/icons/000.png'/>
 					</span>
 					<input type="text" class="form-control" placeholder="Pokemon #5" style="border-right: 0px" pokemon="4">
 					<span class='input-group-addon validationCell'></span>
@@ -148,8 +151,8 @@
 				</div>
 
 				<div id="pkmn6" class="input-group col-md-12 pkmnContainer" moreInfo="hidden">
-					<span class='input-group-addon'>
-						<img src='media/pokemon/icons/0.png'/>
+					<span class='input-group-addon pkmnIcon'>
+						<img src='media/pokemon/icons/000.png'/>
 					</span>
 					<input type="text" class="form-control" placeholder="Pokemon #6" style="border-right: 0px" pokemon="5">
 					<span class='input-group-addon validationCell'></span>
@@ -169,7 +172,8 @@
 					</div>
 					<span style="float: right;">Hide more info</span>
 				</div>
-				<div id="url-column" class="col-md-12">
+			<!--
+			<div id="url-column" class="col-md-12">
 				<div class="input-group col-md-12">
 					<span class="input-group-addon teamUrlAddon">
 						<span class="glyphicon glyphicon-link" style="width: 32px"></span>
@@ -194,9 +198,9 @@
 					</div>
 				</div>
 			</div>
-
+			-->
 			<div id="changelog" class="col-md-12">
-				<div class="panel panel-default">
+				<div class="panel panel-default changelog">
 					<div class="panel-heading">
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
 							Updates - Last updated on 12/12/2016
